@@ -6,10 +6,11 @@ export const ncdsColors = {
         silver: { name: 'Silver', hex: '#677a81', },
     },
     secondary: {
-        name: { name: 'name', hex: '#502b53', },
-        name: { name: 'name', hex: '#15346c', },
-        name: { name: 'name', hex: '#c26b48', },
+        eggplant: { name: 'Eggplant', hex: '#502b53', },
+        space: { name: 'Space', hex: '#15346c', },
+        butterscotch: { name: 'Butterscotch', hex: '#c26b48', },
     },
     extended: {
+        lemon: { name: 'Lemon', hex: '#ffb144', },
     },
 }

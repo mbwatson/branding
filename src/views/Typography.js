@@ -40,9 +40,9 @@ const colors = (props) => {
             </Paragraph>
             <Block>
                 {
-                    ['h1', 'h2', 'h3', 'h4', 'h5', 'headline',].map( (variant) => {
+                    ['h1', 'h2', 'h3', 'h4', 'h5',].map(variant => {
                         return (
-                            <Typography variant={ variant } style={{ marginBottom: '16px', }}>
+                            <Typography variant={ variant } style={{ marginBottom: '16px', }} key={ variant }>
                                 { variant }: The Quick Brown Fox
                             </Typography>
                         )
@@ -54,17 +54,17 @@ const colors = (props) => {
             <Paragraph>
                 Paragraphs and general blocks of text use Google's <TextLink external to="https://fonts.google.com/?query=open+sans">Open Sans</TextLink> font.
             </Paragraph>
-            <Paragraph>
+            <Block>
                 {
-                    ['body2', 'body1'].map( (variant) => {
+                    ['body2', 'body1'].map(variant => {
                         return (
-                            <Typography variant={ variant } style={{ marginBottom: '16px', }}>
+                            <Typography variant={ variant } style={{ marginBottom: '16px', }} key={ variant }>
                                 { variant }: The quick brown fox jumps over the lazy dog.
                             </Typography>
                         )
                     })
                 }
-            </Paragraph>
+            </Block>
         </div>
     )
 }

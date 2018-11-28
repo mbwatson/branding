@@ -10,9 +10,8 @@ import {
     TextFields as FontsIcon,
     KeyboardArrowRight as KeyboardArrowRightIcon,
     GroupWork as GroupWorkIcon,
-    Inbox as InboxIcon,
-    ExpandLess,
-    ExpandMore,
+    ExpandLess as ExpandLessIcon,
+    ExpandMore as ExpandMoreIcon,
 } from '@material-ui/icons'
 
 const styles = (theme) => ({
@@ -26,19 +25,18 @@ const mainMenuItems = [
     { text: 'Writing', path: '/writing', icon: <EditIcon/> },
     { text: 'Color', path: '/color', icon: <ColorLensIcon/> },
     { text: 'Typography', path: '/typography', icon: <FontsIcon/> },
-    { text: 'Groups', path: '/groups', icon: <GroupWorkIcon/>, submenu: [
-        { text: 'iRODS', path: '/groups/irods', icon: <KeyboardArrowRightIcon/> },
-        { text: 'NCDS', path: '/groups/ncds', icon: <KeyboardArrowRightIcon/> },
-        { text: 'Hydroshare', path: '/groups/hydroshare', icon: <KeyboardArrowRightIcon/> },
-    ] },
-]
-
-const groupsMenuItems = [
+    { text: 'Groups', path: '/groups', icon: <GroupWorkIcon/>,
+        submenu: [
+            { text: 'iRODS', path: '/groups/irods', icon: <KeyboardArrowRightIcon/> },
+            { text: 'NCDS', path: '/groups/ncds', icon: <KeyboardArrowRightIcon/> },
+            { text: 'Hydroshare', path: '/groups/hydroshare', icon: <KeyboardArrowRightIcon/> },
+        ]
+    },
 ]
 
 class menu extends Component {
     state = {
-        open: true,
+        open: false,
     }
 
     clickHandler = () => {
@@ -52,42 +50,44 @@ class menu extends Component {
                 <List subheader={<ListSubheader component="div">RENCI</ListSubheader>}>
                     {
                         mainMenuItems.map( (item) => {
-                            return item.hasOwnProperty('submenu')
-                                        ? <Fragment>
-                                                <ListItem button onClick={ this.clickHandler }>
-                                                    <ListItemIcon>
-                                                        { item.icon }
-                                                    </ListItemIcon>
-                                                    <ListItemText primary={ item.text } />
-                                                    { this.state.open ? <ExpandLess /> : <ExpandMore /> }
-                                                </ListItem>
-                                                <Collapse in={ this.state.open } timeout="auto" unmountOnExit>
-                                                    <List component="div">
-                                                        {
-                                                            item.submenu.map( (item) => {
-                                                                return (
-                                                                    <ListItem button component={ NavLink } to={ item.path }
-                                                                        key={ item.text } activeClassName={ classes.active } exact
-                                                                    >
-                                                                        <ListItemIcon>
-                                                                            { item.icon }
-                                                                        </ListItemIcon>
-                                                                        <ListItemText primary={ item.text } />
-                                                                    </ListItem>
-                                                                )
-                                                            })
-                                                        }
-                                                    </List>
-                                                </Collapse>
-                                        </Fragment>
-                                        : <ListItem button component={ NavLink } to={ item.path }
-                                            key={ item.text } activeClassName={ classes.active } exact
-                                        >
-                                            <ListItemIcon>
-                                                { item.icon }
-                                            </ListItemIcon>
-                                            <ListItemText primary={ item.text } />
-                                        </ListItem>
+                            return (
+                                item.hasOwnProperty('submenu')
+                                ? <Fragment key={ item.path }>
+                                    <ListItem button onClick={ this.clickHandler } key={ item.text }
+                                        component={ NavLink } to={ item.path } exact activeClassName={ classes.active }
+                                    >
+                                        <ListItemIcon>
+                                            { item.icon }
+                                        </ListItemIcon>
+                                        <ListItemText primary={ item.text } />
+                                        { this.state.open ? <ExpandLessIcon /> : <ExpandMoreIcon /> }
+                                    </ListItem>
+                                    <Collapse in={ this.state.open } timeout="auto" unmountOnExit>
+                                        <List component="div">
+                                            {
+                                                item.submenu.map( (item) => {
+                                                    return (
+                                                        <ListItem button component={ NavLink } to={ item.path }
+                                                            key={ item.text } activeClassName={ classes.active } exact
+                                                        >
+                                                            <ListItemIcon>
+                                                                { item.icon }
+                                                            </ListItemIcon>
+                                                            <ListItemText primary={ item.text } />
+                                                        </ListItem>
+                                                    )
+                                                })
+                                            }
+                                        </List>
+                                    </Collapse>
+                                </Fragment>
+                                : <ListItem button component={ NavLink } to={ item.path } key={ item.text } activeClassName={ classes.active } exact>
+                                    <ListItemIcon>
+                                        { item.icon }
+                                    </ListItemIcon>
+                                    <ListItemText primary={ item.text } />
+                                </ListItem>
+                            )
                         })
                     }
                 </List>

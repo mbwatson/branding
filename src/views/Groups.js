@@ -1,19 +1,14 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Link } from 'react-router-dom'
-
-import { List, ListItem } from '@material-ui/core'
+import { Switch, Route } from 'react-router-dom'
 
 import Title from '../components/Typography/Title'
 import Heading from '../components/Typography/Heading'
-import Subheading from '../components/Typography/Heading'
 import Paragraph from '../components/Typography/Paragraph'
 
-import ColorSection from '../components/Color/ColorSection'
-
-import { irodsColors } from '../themes/Irods'
-import { hydroshareColors } from '../themes/Hydroshare'
-import { ncdsColors } from '../themes/Ncds'
+import Irods from '../views/groups/Irods'
+import Hydroshare from '../views/groups/Hydroshare'
+import Ncds from '../views/groups/Ncds'
 
 const styles = (theme) => ({
     root: {
@@ -29,34 +24,38 @@ const styles = (theme) => ({
     },
 })
 
+const Index = props => {
+    return (
+        <div>
+            <Title>RENCI Groups</Title>
+            
+            <Paragraph>
+                At RENCI, groups are... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem repudiandae corrupti modi dolore eum. Provident veniam repudiandae aliquam asperiores sit, quia, sint eligendi aperiam exercitationem iste necessitatibus, vitae, nobis odit.
+            </Paragraph>
+
+            <Heading>Research Groups at RENCI</Heading>
+            <Paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, laudantium!
+            </Paragraph>
+
+            <Heading>Software Development Groups at RENCI</Heading>
+            <Paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet fugiat quasi architecto, hic aliquam repudiandae totam recusandae quis. Quia a repellat mollitia, possimus!
+            </Paragraph>
+        </div>
+    )
+}
+
 const groups = (props) => {
     const { classes } = props
     return (
         <div className={ classes.root }>
-            <Title>RENCI</Title>
-            
-            <Paragraph>
-                At RENCI, groups are... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et quos voluptas repellat sed reiciendis. Ea pariatur nam consequuntur fugit maxime, neque sed vitae perferendis nulla provident est voluptas. Dolore, accusamus!
-            </Paragraph>
-            
-            <Heading>iRODS</Heading>
-
-            <Subheading>Primary Palette</Subheading>
-            <ColorSection colors={ irodsColors.primary }/>
-
-            <Heading>Hydroshare</Heading>
-
-            <Subheading>Primary Palette</Subheading>
-            <ColorSection colors={ hydroshareColors.primary }/>
-
-            <Heading>NCDS</Heading>
-            
-            <Subheading>Primary Palette</Subheading>
-            <ColorSection colors={ ncdsColors.primary }/>
-
-            <Subheading>Secondary Palette</Subheading>
-            <ColorSection colors={ ncdsColors.secondary }/>
-
+            <Switch>
+                <Route path="/groups/irods" component={ Irods }/>
+                <Route path="/groups/hydroshare" component={ Hydroshare }/>
+                <Route path="/groups/ncds" component={ Ncds }/>
+                <Route path="/groups" component={ Index }/>
+            </Switch>
         </div>
     )
 }

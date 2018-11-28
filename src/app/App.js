@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles'
 import { CssBaseline, Drawer, AppBar, Toolbar, IconButton } from '@material-ui/core'
 import { Menu as MenuIcon, ChevronLeft as ChevronLeftIcon } from '@material-ui/icons'
 
-import Routes from './Routes'
+import Routes from '../routes/Routes'
 import Menu from './Menu'
 
 const drawerWidth = 210

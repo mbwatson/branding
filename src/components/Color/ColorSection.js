@@ -21,7 +21,7 @@ const colorSection = (props) => {
     return (
         <Grid container className={ classes.colorGrid }>
             {
-                Object.keys(colors).map(function(key, index) {
+                Object.keys(colors).map(function(key) {
                     return (
                         <Grid item xs={12} sm={6} md={4} className={ classes.colorBlock } key={ colors[key].name }>
                             <ColorBlock colorName={ colors[key].name } colorHex={ colors[key].hex }/>

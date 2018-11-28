@@ -16,7 +16,7 @@ WebFont.load({
 })
 
 ReactDOM.render(
-    <Router>
+    <Router basename={ '/branding' }>
         <ScrollToTop>
             <MuiThemeProvider theme={ Theme }>
                 <App />

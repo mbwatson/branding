@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames'
 import { Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles';
 import { copyText } from '../../utils/CopyToClipboard'
@@ -19,7 +20,7 @@ const styles = ( theme ) => ({
 const info = ( props ) => {
     const { classes } = props
     return (
-        <div className={ classes.root }>
+        <div className={ classnames(classes.root, props.className) }>
             <Typography variant="body1" className={ classes.title }>
                 { props.title }
             </Typography>

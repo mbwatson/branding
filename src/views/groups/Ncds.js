@@ -19,7 +19,7 @@ const ncds = props => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit labore consequuntur doloribus sunt, perferendis placeat voluptates eligendi dolorum possimus tempora omnis ut quod autem quia dicta earum nostrum molestiae soluta, iste eius ipsa nisi. Pariatur magni maiores cupiditate iste ea sapiente minus sed, repudiandae sunt nesciunt autem officiis corrupti reprehenderit at accusamus perspiciatis. Cumque cupiditate, provident quisquam vero non ipsam hic deleniti accusantium ullam ad atque consequuntur minus itaque reprehenderit earum quae illum. Ut maiores aperiam pariatur asperiores adipisci aspernatur, dignissimos nemo explicabo placeat quis illum quas quibusdam, doloribus. Libero fugit ea minus accusantium hic placeat sed, sunt explicabo similique?
             </Paragraph>
 
-            <Heading>Primary Colors</Heading>
+            <Heading>Primary Palette</Heading>
             <ColorSection colors={ ncdsColors.primary }/>
 
         </div>

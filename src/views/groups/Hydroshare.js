@@ -19,7 +19,7 @@ const hydroshare = props => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque blanditiis, nobis minus.
             </Paragraph>
             
-            <Heading>Primary Colors</Heading>
+            <Heading>Primary Palette</Heading>
             <ColorSection colors={ hydroshareColors.primary }/>
 
         </div>

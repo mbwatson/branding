@@ -15,7 +15,7 @@ const irods = props => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nemo eos magni, vel eligendi cupiditate fuga odio numquam alias harum, explicabo facilis quos eum inventore, adipisci doloribus cumque veritatis consectetur!
             </Paragraph>
 
-            <Heading>Primary Colors</Heading>
+            <Heading>Primary Palette</Heading>
             <ColorSection colors={ irodsColors.primary }/>
 
         </div>

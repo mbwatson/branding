@@ -21,6 +21,13 @@ const styles = (theme) => ({
     },
 })
 
+
+// const filenameFromPath = (path) => {
+//     const imagePathRegex = /^[\/\w]+\/(.+)\..+(\.\w+)/
+//     const match = path.match(imagePathRegex)
+//     return (match && match.length > 0) ? match.slice(1,3).join() : path
+// }
+
 const logoBlock = (props) => {
     const { classes } = props
     return (
@@ -29,7 +36,10 @@ const logoBlock = (props) => {
                 <img src={ props.logo } alt="Logo" className={ classes.image }/>
             </CardContent>
             <CardContent className={ classes.content }>
-                <InfoBlock title="Image" body={ props.logo } className={ classes.info }/>                
+                <InfoBlock
+                    title="Image"
+                    body={ props.logo }
+                    className={ classes.info }/>                
             </CardContent>
         </Card>
     )

@@ -8,6 +8,7 @@ const theme = createMuiTheme({
             maxWidth: '900px',
             margin: '0 auto',
         },
+
         debug: {
             border: '1px solid #fcc',
             '& *': {
@@ -75,7 +76,8 @@ const theme = createMuiTheme({
     },
     spacing: {
         unit: 8,
-    }
+    },
+    fade: (attribute, ms = 250) => `${ attribute } ${ ms }ms`,
 })
 
 export default theme

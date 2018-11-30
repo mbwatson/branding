@@ -1,7 +1,7 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Card, CardContent } from '@material-ui/core'
-import Info from '../Typography/Info'
+import InfoBlock from '../Typography/InfoBlock'
 
 const styles = (theme) => ({
     card: {
@@ -29,7 +29,7 @@ const logoBlock = (props) => {
                 <img src={ props.logo } alt="Logo" className={ classes.image }/>
             </CardContent>
             <CardContent className={ classes.content }>
-                <Info title="Image" body={ props.logo } className={ classes.info }/>                
+                <InfoBlock title="Image" body={ props.logo } className={ classes.info }/>                
             </CardContent>
         </Card>
     )

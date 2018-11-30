@@ -1,7 +1,7 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Card, CardContent } from '@material-ui/core'
-import Info from '../Typography/Info'
+import InfoBlock from '../Typography/InfoBlock'
 
 const hexToRgb = (hex) => {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
@@ -41,9 +41,9 @@ const colorBlock = (props) => {
                 style={{ backgroundColor: colorHex }}
             />
             <CardContent className={ classes.content }>
-                <Info title="Name" body={ colorName } className={ classes.info }/>
-                <Info title="Hex" body={ colorHex } className={ classes.info }/>
-                <Info title="RGB" body={ colorRgb } className={ classes.info }/>
+                <InfoBlock title="Name" body={ colorName } className={ classes.info }/>
+                <InfoBlock title="Hex" body={ colorHex } className={ classes.info }/>
+                <InfoBlock title="RGB" body={ colorRgb } className={ classes.info }/>
             </CardContent>
         </Card>
     )

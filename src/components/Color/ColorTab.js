@@ -16,12 +16,20 @@ const styles = (theme) => ({
     card: {
         margin: 2 * theme.spacing.unit,
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
         width: '100%',
+        [theme.breakpoints.up('sm')]: {
+            flexDirection: 'row',
+        },
     },
     color: {
         flex: 1,
-        minWidth: '100px',
+        minWidth: 'auto',
+        minHeight: '100px',
+        [theme.breakpoints.up('sm')]: {
+            minWidth: '100px',
+            minheight: 'auto',
+        },
     },
     content: {
         flex: 3,

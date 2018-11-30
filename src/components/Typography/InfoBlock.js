@@ -27,12 +27,11 @@ const styles = ( theme ) => ({
         },
     },
     copyText: {
-        color: theme.palette.grey[600],
+        color: theme.palette.secondary.main,
         textTransform: 'uppercase',
         position: 'absolute',
         bottom: 0,
         transform: 'translateY(-50%)',
-        color: theme.palette.secondary.main,
         marginLeft: theme.spacing.unit,
         opacity: 0,
         transition: theme.fade('opacity'),
